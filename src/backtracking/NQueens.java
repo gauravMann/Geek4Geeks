@@ -5,13 +5,12 @@ import java.util.Scanner;
 
 public class NQueens {
 
-	private static int BOARD_SIZE = 4;
-
 	public static void main(String[] args) {
 
 		Scanner scn = new Scanner(System.in);
 		int bsize = scn.nextInt();
-		// g[i] stores place of queen in ith row
+		scn.close();
+		// g[i] stores column place of queen in ith row
 		int[] G = new int[bsize];
 		Arrays.fill(G, -1);
 		placeQueen(G, 0);
@@ -35,27 +34,17 @@ public class NQueens {
 	}
 
 	private static void printBoard(int[] g) {
-		boolean noSolution = true;
+		
 		for (int i = 0; i < g.length; i++) {
-			if (g[i] != -1) {
-				noSolution = false;
-				break;
-			}
-		}
-		if (noSolution) {
-			System.out.println("No soltuion");
-		} else {
-			for (int i = 0; i < g.length; i++) {
-				for (int j = 0; j < g.length; j++) {
-					if (g[i] == j)
-						System.out.print("Q ");
-					else
-						System.out.print("* ");
-				}
-				System.out.println();
+			for (int j = 0; j < g.length; j++) {
+				if (g[i] == j)
+					System.out.print("Q ");
+				else
+					System.out.print("* ");
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 
 	private static boolean isSafe(int[] G, int pos) {
@@ -65,6 +54,7 @@ public class NQueens {
 			}
 
 			if (Math.abs(G[i] - G[pos]) == Math.abs(i - pos)) {
+
 				return false;
 			}
 		}

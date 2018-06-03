@@ -30,15 +30,16 @@ public class CombinatorialSum {
 	}
 
 	public static void solve(int[] coins, int vidx, StringBuilder sb, int sum) {
+		if(sum < 0){
+			return;
+		}
 		if (vidx == coins.length) {
+			if (sum == 0) {
+				System.out.print("(" + sb + ")");
+			}
 			return;
 		}
-		else if(sum < 0){
-			return;
-		}
-		else if (sum == 0) {
-			System.out.print("(" + sb + ")");
-		}
+		
 		solve(coins, vidx, sb.append(coins[vidx]), sum - coins[vidx]);
 		sb.deleteCharAt(sb.length() - 1);
 		solve(coins, vidx + 1, sb, sum);
@@ -58,6 +59,7 @@ public class CombinatorialSum {
 			}
 			Arrays.sort(coins);
 			int sum = scn.nextInt();
+			scn.close();
 
 			solve(coins, 0, new StringBuilder(""),  sum);
 			//printPath(coins, 0, sum, new StringBuilder(""), 0);
