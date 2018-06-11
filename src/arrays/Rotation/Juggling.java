@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Juggling {
 
-	/* Rotate the array clockwise by d */
+	/* Rotate the array clockwise by d
+	 * still not understood */
+	
 	public static void juggle(int[] arr, int d) {
 
 	}
