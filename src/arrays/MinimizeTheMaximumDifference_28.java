@@ -3,7 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MinimizeTheMaximumDifference {
+public class MinimizeTheMaximumDifference_28 {
 
 	public static void solve(int[] arr, int k) {
 		Arrays.sort(arr);
