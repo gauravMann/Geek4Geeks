@@ -39,11 +39,11 @@ public class MaxSubArraySumAtLeastKNumbers_31 {
 		 * wSI : window start Index 
 		 * Compete 
 		 * 	maxAnswer
-		 *  windoSum at eI 
-		 *  windowSum + kadane's till eI-1
-		 *  Loop constraints special as 0th window sum is
-		 *  accounted for, we start window from 1 that is why
-		 *  equality sign
+		 *  windoSum ending at eI 
+		 *  windowSum + kadane's till eI-k--> gives max sum till current window(extend)
+		 *  extend window factor--> kad[weI-k]
+		 *  
+		 *  
 		 */
 		// window pointer is standing at last element of new window
 		
