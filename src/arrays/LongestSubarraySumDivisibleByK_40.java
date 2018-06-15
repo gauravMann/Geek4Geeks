@@ -66,8 +66,8 @@ public class LongestSubarraySumDivisibleByK_40 {
 		 * 
 		 */
 //		this is wrong, as it gives len = ei-si = 0 -(-1) = 1, even when no subarray found
-		modMap.put(0, new Pair(-1, 0));   
-//		modMap.put(0, new Pair(-1, -1));
+//		modMap.put(0, new Pair(-1, 0));   
+		modMap.put(0, new Pair(-1, -1));
 		for (int i = 0; i < modSumPrefix.length; i++) {
 
 			modMap.putIfAbsent(modSumPrefix[i], new Pair(i, i));
