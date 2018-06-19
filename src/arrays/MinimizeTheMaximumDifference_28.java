@@ -13,7 +13,7 @@ public class MinimizeTheMaximumDifference_28 {
 		if (small > big) {
 			int temp = big ^ small;
 			small = small ^ temp;
-			big = temp ^ big;
+			big = temp ^ big; 
 
 		}
 		int gap = big - small;
