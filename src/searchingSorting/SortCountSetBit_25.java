@@ -1,27 +1,18 @@
 package searchingSorting;
 
-
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class SortCountSetBit_25 {
 
-	public static void main(String[] args) {
-
-		Scanner scn = new Scanner(System.in);
-
-		int[] arr = new int[scn.nextInt()];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = scn.nextInt();
-		}
-
+	public static void solve(int[] arr) {
 		int n = getmax(arr);
-		int count = (int) (Math.log(n) / Math.log(2))+1;
+		int count = (int) (Math.log(n) / Math.log(2)) + 1;
 
-		Arrays.sort(arr);
+	
 		Map<Integer, ArrayList<Integer>> bitMap = new HashMap<>();
 
 		for (int i = 0; i < arr.length; i++) {
@@ -45,6 +36,22 @@ public class SortCountSetBit_25 {
 				}
 			}
 		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner scn = new Scanner(System.in);
+		int test = scn.nextInt();
+		while (test-- > 0) {
+			int[] arr = new int[scn.nextInt()];
+			for (int i = 0; i < arr.length; i++) {
+				arr[i] = scn.nextInt();
+			}
+			solve(arr);
+			System.out.println();
+		}
+
 	}
 
 	private static int getmax(int[] arr) {
