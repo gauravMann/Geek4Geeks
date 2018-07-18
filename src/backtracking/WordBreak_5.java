@@ -23,23 +23,27 @@ public class WordBreak_5 {
 		}
 	}
 
-	private static void solve(HashSet<String> dict, String ques, String prefix, String ans) {
+	private static void solve(HashSet<String> dictionary, String ques, String sentence, String prefix) {
 
 		if (ques.length() == 0) {
+			/*
+			 * prefix has something then it's not a valid answer
+			 */
 			if (prefix.length() == 0) {
-				System.out.print("(" + ans.trim() + ")");
+				System.out.print("(" + sentence.trim() + ")");
 			}
 			return;
 		}
 
-		char ch = ques.charAt(0);
-		String ros = ques.substring(1);
+		char firstChar = ques.charAt(0);
 
-		if (dict.contains(prefix + ch)) {
-			solve(dict, ros, "", ans + prefix + ch + " ");
-			solve(dict, ros, prefix + ch, ans);
+		if (dictionary.contains(prefix + firstChar)) {
+			/* 'like' found, so empty from prefix */
+			solve(dictionary, ques.substring(1), sentence + prefix + firstChar + " ", "");
+			/* try to build a larger word, sam->samsung */
+			solve(dictionary, ques.substring(1), sentence, prefix + firstChar);
 		} else {
-			solve(dict, ros, prefix + ch, ans);
+			solve(dictionary, ques.substring(1), sentence, prefix + firstChar);
 		}
 	}
 
