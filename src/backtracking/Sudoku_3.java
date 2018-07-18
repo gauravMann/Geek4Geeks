@@ -21,6 +21,7 @@ public class Sudoku_3 {
 		return pos;
 	}
 
+	
 	public static void setMasks(int[][]grid,int[]rowMask,int[]colMask,int[][]sectorMask) {
 		
 		for(int i = 0; i < grid.length; i++) {
@@ -83,6 +84,7 @@ public class Sudoku_3 {
 		return false;
 	}
 
+	
 	public static void printSudoku(int[][] grid) {
 		for (int i = 0; i < grid.length; i++) {
 			for (int j = 0; j < grid[0].length; j++) {
@@ -92,6 +94,7 @@ public class Sudoku_3 {
 		}
 	}
 
+	
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int test = scn.nextInt();
