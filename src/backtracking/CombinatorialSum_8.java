@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class CombinatorialSum {
+public class CombinatorialSum_8 {
 
 	public static void solve(int[] coins, int vidx, StringBuilder sb,
 							 String ssf, int targetLeft) {
